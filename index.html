@@ -11,11 +11,39 @@
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="pre-inner">
+      <div class="pre-ring"></div>
+      <p class="pre-title">Loading Invitation</p>
+      <p class="pre-sub">Please wait…</p>
+    </div>
+  </div>
+
+  <!-- BACKGROUND DECOR -->
+  <div class="mandala-layer" aria-hidden="true">
+    <span class="mandala m1"></span>
+    <span class="mandala m2"></span>
+    <span class="mandala m3"></span>
+  </div>
+
+  <!-- MUSIC -->
+  <audio id="bgMusic" preload="auto" loop>
+    <!-- Replace this file with your own mp3 later -->
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-btn" id="musicBtn" aria-label="Toggle Music">
+    ♫
+  </button>
+
+  <!-- SCROLL TO TOP -->
+  <button class="top-btn" id="topBtn" aria-label="Scroll to top">↑</button>
 
   <!-- NAV -->
   <header class="nav">
@@ -25,6 +53,7 @@
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#events">Events</a>
+        <a href="#family">Family</a>
         <a href="#venue">Venue</a>
         <a href="#rsvp">RSVP</a>
       </nav>
@@ -35,6 +64,7 @@
     <div class="mobile-menu" id="mobileMenu">
       <a class="m-link" href="#home">Home</a>
       <a class="m-link" href="#events">Events</a>
+      <a class="m-link" href="#family">Family</a>
       <a class="m-link" href="#venue">Venue</a>
       <a class="m-link" href="#rsvp">RSVP</a>
     </div>
@@ -46,25 +76,27 @@
 
     <div class="hero-inner" data-aos="fade-up" data-aos-duration="1000">
 
-      <div class="ganesh" data-aos="zoom-in" data-aos-delay="100">
+      <div class="frame" aria-hidden="true"></div>
+
+      <div class="ganesh" data-aos="zoom-in" data-aos-delay="120">
         <img src="ganesh.svg" alt="Lord Ganesha">
       </div>
 
-      <p class="invocation" data-aos="fade-up" data-aos-delay="160">
+      <p class="invocation" data-aos="fade-up" data-aos-delay="180">
         ॥ श्री गणेशाय नमः ॥
       </p>
 
-      <h1 class="names" data-aos="fade-up" data-aos-delay="220">
+      <h1 class="names" data-aos="fade-up" data-aos-delay="240">
         Abhishek Bhola <span class="amp">&</span> Geetika Punj
       </h1>
 
-      <p class="hero-text" data-aos="fade-up" data-aos-delay="280">
+      <p class="hero-text" data-aos="fade-up" data-aos-delay="300">
         With the blessings of our families,<br/>
         we request the honour of your gracious presence<br/>
-        at the wedding celebration.
+        at our wedding celebration.
       </p>
 
-      <div class="hero-pill" data-aos="fade-up" data-aos-delay="340">
+      <div class="hero-pill" data-aos="fade-up" data-aos-delay="360">
         <span>19 April 2026</span>
         <span class="dot">•</span>
         <span>07:00 PM</span>
@@ -72,12 +104,12 @@
         <span>Bikaner, Rajasthan</span>
       </div>
 
-      <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="420">
         <a class="btn primary" href="#rsvp">RSVP on WhatsApp</a>
         <a class="btn ghost" href="#events">View Events</a>
       </div>
 
-      <div class="countdown" data-aos="fade-up" data-aos-delay="460">
+      <div class="countdown" data-aos="fade-up" data-aos-delay="480">
         <div class="cd"><span id="d">--</span><small>Days</small></div>
         <div class="cd"><span id="h">--</span><small>Hours</small></div>
         <div class="cd"><span id="m">--</span><small>Mins</small></div>
@@ -92,8 +124,8 @@
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">An Indian Wedding Celebration</h2>
       <p class="section-desc">
-        Weddings are not just ceremonies — they are emotions, family, traditions,
-        and a lifetime of memories. Your blessings mean everything to us.
+        Weddings are not just ceremonies — they are traditions, emotions, family,
+        and blessings. Your presence will make our celebration even more special.
       </p>
     </div>
   </section>
@@ -147,8 +179,30 @@
     </div>
   </section>
 
+  <!-- FAMILY SECTION -->
+  <section id="family" class="section">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Invitation from Family</h2>
+
+      <div class="family-card" data-aos="fade-up" data-aos-delay="120">
+        <p class="family-text">
+          With immense joy and happiness, we invite you to bless
+          <b>Abhishek Bhola</b> and <b>Geetika Punj</b> on their wedding day.
+          Your presence will be our pride and your blessings our greatest gift.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="family-text">
+          Kindly join us with your family to celebrate our happiness,
+          and make this occasion memorable with your love and blessings 🙏
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- VENUE -->
-  <section id="venue" class="section">
+  <section id="venue" class="section alt">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Venue</h2>
 
@@ -180,11 +234,11 @@
   </section>
 
   <!-- RSVP -->
-  <section id="rsvp" class="section alt">
+  <section id="rsvp" class="section">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">RSVP</h2>
       <p class="section-desc">
-        Please confirm your presence on WhatsApp 💛 <br/>
+        Please confirm your presence on WhatsApp 💛<br/>
         (Name + Guests + Attending Yes/No)
       </p>
 
@@ -195,7 +249,7 @@
       </div>
 
       <p class="footerline">
-        We look forward to celebrating together 🙏
+        We eagerly look forward to celebrating together 🙏
       </p>
     </div>
   </section>
