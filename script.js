@@ -1,13 +1,16 @@
-// ---------- Preloader ----------
+// ---------- Preloader (safe + skip) ----------
 (function(){
   const pre = document.getElementById("preloader");
+  const skip = document.getElementById("skipPre");
   const hide = () => {
     if(!pre) return;
     pre.style.opacity = "0";
     setTimeout(() => pre.style.display = "none", 350);
   };
-  window.addEventListener("load", () => setTimeout(hide, 400));
-  setTimeout(hide, 2500); // fallback
+
+  window.addEventListener("load", () => setTimeout(hide, 450));
+  setTimeout(hide, 2600); // fallback
+  if(skip) skip.addEventListener("click", hide);
 })();
 
 // ---------- Mobile menu ----------
@@ -30,7 +33,7 @@ if(topBtn){
   topBtn.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
 }
 
-// ---------- Reveal ----------
+// ---------- Reveal animations ----------
 const reveals = document.querySelectorAll(".reveal");
 if(reveals.length){
   const io = new IntersectionObserver((entries) => {
@@ -75,7 +78,7 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// ---------- WhatsApp ----------
+// ---------- WhatsApp RSVP ----------
 const whatsappBtn = document.getElementById("whatsappBtn");
 if(whatsappBtn){
   const whatsappNumber = "919993688397";
@@ -164,7 +167,7 @@ if(canvas){
       life: Math.random()*220 + 120
     });
   }
-  for(let i=0;i<110;i++) addSpark();
+  for(let i=0;i<120;i++) addSpark();
 
   function tick(){
     ctx.clearRect(0,0,W,H);
