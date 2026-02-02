@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek Bhola & Geetika Punj | Wedding Invitation</title>
-
   <meta name="description" content="Wedding invitation of Abhishek Bhola & Geetika Punj — 19 April 2026, Bikaner Rajasthan." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Similar premium typography -->
+  <!-- Premium typography similar to City -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
@@ -18,36 +17,49 @@
 
 <body>
 
-  <!-- Preloader -->
+  <!-- PRELOADER -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="pre-wrap">
+      <div class="pre-mark">AG</div>
       <div class="pre-line"></div>
       <div class="pre-title">Loading Invitation</div>
       <div class="pre-sub">Abhishek & Geetika</div>
+      <button class="pre-skip" id="skipPre">Skip</button>
     </div>
   </div>
 
-  <!-- Music -->
+  <!-- BACKGROUND SOFT FLOATERS -->
+  <div class="mandala-layer" aria-hidden="true">
+    <span class="mandala m1"></span>
+    <span class="mandala m2"></span>
+    <span class="mandala m3"></span>
+    <span class="mandala m4"></span>
+  </div>
+
+  <!-- MUSIC -->
   <audio id="bgMusic" preload="auto" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
-  <button class="fab music" id="musicBtn" aria-label="Toggle music" title="Music">
-    ♫
-  </button>
+  <button class="fab music" id="musicBtn" aria-label="Toggle music" title="Music">♫</button>
 
-  <!-- Scroll to top -->
+  <!-- TOP -->
   <button class="fab top" id="topBtn" aria-label="Back to top" title="Top">↑</button>
 
-  <!-- Nav -->
+  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <a class="logo" href="#home">A<span class="gold">&</span>G</a>
+      <a class="logo" href="#home">
+        <span class="mono">AG</span>
+        <span class="divider"></span>
+        <span class="mini">Invitation</span>
+      </a>
 
       <nav class="links">
         <a href="#events">Events</a>
+        <a href="#timeline">Timeline</a>
         <a href="#gallery">Gallery</a>
         <a href="#venue">Venue</a>
-        <a href="#rsvp">RSVP</a>
+        <a class="nav-rsvp" href="#rsvp">RSVP</a>
       </nav>
 
       <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
@@ -55,17 +67,18 @@
 
     <div class="mobile" id="mobileMenu">
       <a class="m" href="#events">Events</a>
+      <a class="m" href="#timeline">Timeline</a>
       <a class="m" href="#gallery">Gallery</a>
       <a class="m" href="#venue">Venue</a>
       <a class="m" href="#rsvp">RSVP</a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
+  <!-- HERO -->
+  <section id="home" class="hero snap">
     <div class="hero-bg" aria-hidden="true"></div>
 
-    <!-- subtle sparkles -->
+    <!-- sparkles canvas -->
     <canvas id="sparkles" class="sparkles" aria-hidden="true"></canvas>
 
     <div class="hero-inner">
@@ -90,7 +103,7 @@
 
       <div class="hero-cta reveal delay4">
         <a class="btn primary" href="#rsvp">RSVP</a>
-        <a class="btn ghost" href="#events">View Events</a>
+        <a class="btn ghost" href="#timeline">See Timeline</a>
       </div>
 
       <div class="countdown reveal delay4">
@@ -100,23 +113,38 @@
         <div class="cd"><span id="s">--</span><small>Secs</small></div>
       </div>
 
-      <p class="scroll reveal">Scroll ↓</p>
+      <div class="scroll reveal">
+        <span>Scroll</span>
+        <span class="arrow">↓</span>
+      </div>
     </div>
   </section>
 
-  <!-- Intro -->
-  <section class="section">
+  <!-- INTRO -->
+  <section class="section snap">
     <div class="wrap">
-      <h2 class="title reveal">A celebration of love</h2>
-      <p class="text reveal delay1">
-        Weddings are not just ceremonies — they are stories, family, traditions and memories.
-        Your presence and blessings mean everything to us.
-      </p>
+      <div class="two-col">
+        <div>
+          <h2 class="title reveal">A celebration of love</h2>
+          <p class="text reveal delay1">
+            Weddings are not just ceremonies — they are stories, family, traditions and memories.
+            Your presence and blessings mean everything to us.
+          </p>
+        </div>
+
+        <div class="quote reveal delay2">
+          <div class="quote-mark">“</div>
+          <p>
+            We request the honour of your gracious presence and blessings on this special occasion.
+          </p>
+          <div class="quote-sig">— Abhishek & Geetika</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Events -->
-  <section id="events" class="section soft">
+  <!-- EVENTS (cards) -->
+  <section id="events" class="section soft snap">
     <div class="wrap">
       <h2 class="title reveal">Events</h2>
 
@@ -160,20 +188,71 @@
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="section">
+  <!-- TIMELINE (City vibe) -->
+  <section id="timeline" class="section snap">
+    <div class="wrap">
+      <h2 class="title reveal">Wedding Timeline</h2>
+      <p class="text reveal delay1">A quick guide to the celebrations.</p>
+
+      <div class="timeline">
+        <div class="t-line" aria-hidden="true"></div>
+
+        <div class="t-item reveal delay1">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <div class="t-time">18 April • 06:00 PM</div>
+            <div class="t-title">Engagement</div>
+            <div class="t-desc">Ring ceremony & blessings.</div>
+          </div>
+        </div>
+
+        <div class="t-item reveal delay2">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <div class="t-time">18 April • 08:00 PM</div>
+            <div class="t-title">Mehndi / Sangeet</div>
+            <div class="t-desc">Dance night + celebrations.</div>
+          </div>
+        </div>
+
+        <div class="t-item reveal delay3">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <div class="t-time">19 April • Afternoon</div>
+            <div class="t-title">Haldi</div>
+            <div class="t-desc">Traditional rituals & fun.</div>
+          </div>
+        </div>
+
+        <div class="t-item reveal delay4">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <div class="t-time">19 April • 07:00 PM</div>
+            <div class="t-title">Wedding</div>
+            <div class="t-desc">Main ceremony & blessings.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section soft snap">
     <div class="wrap">
       <h2 class="title reveal">Gallery</h2>
       <p class="text reveal delay1">A few moments we love.</p>
 
       <div class="gallery">
-        <!-- Replace these later with your own -->
         <img class="g reveal delay1" src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="photo 1" />
         <img class="g reveal delay2" src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?q=80&w=1200&auto=format&fit=crop" alt="photo 2" />
         <img class="g reveal delay3" src="https://images.unsplash.com/photo-1523438097201-512ae7d59b3b?q=80&w=1200&auto=format&fit=crop" alt="photo 3" />
         <img class="g reveal delay4" src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop" alt="photo 4" />
         <img class="g reveal delay1" src="https://images.unsplash.com/photo-1529634897861-22d3c048bba7?q=80&w=1200&auto=format&fit=crop" alt="photo 5" />
         <img class="g reveal delay2" src="https://images.unsplash.com/photo-1520771739272-7f1f1379a58e?q=80&w=1200&auto=format&fit=crop" alt="photo 6" />
+      </div>
+
+      <div class="gallery-tip reveal">
+        Tip: Replace these with your own photos (I can help you set it up).
       </div>
 
       <!-- Lightbox -->
@@ -184,8 +263,8 @@
     </div>
   </section>
 
-  <!-- Venue -->
-  <section id="venue" class="section soft">
+  <!-- VENUE -->
+  <section id="venue" class="section snap">
     <div class="wrap">
       <h2 class="title reveal">Venue</h2>
 
@@ -215,7 +294,7 @@
   </section>
 
   <!-- RSVP -->
-  <section id="rsvp" class="section">
+  <section id="rsvp" class="section soft snap">
     <div class="wrap">
       <h2 class="title reveal">RSVP</h2>
       <p class="text reveal delay1">
