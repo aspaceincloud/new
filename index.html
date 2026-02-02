@@ -15,13 +15,19 @@
 <body>
 
   <!-- PRELOADER -->
-  <div class="preloader" id="preloader" aria-hidden="true">
-    <div class="pre-card">
-      <div class="pre-ring"></div>
-      <div class="pre-title">Loading Invitation</div>
-      <div class="pre-sub">Please wait…</div>
-    </div>
+  <<div class="preloader" id="preloader" aria-hidden="true">
+   <div class="pre-card">
+    <div class="pre-ring"></div>
+    <div class="pre-title">Loading Invitation</div>
+    <div class="pre-sub">Please wait…</div>
+    <div class="pre-skip">
+      <button class="btn ghost" onclick="document.getElementById('preloader').style.display='none'">
+        Skip
+      </button>
+     </div>
+   </div>
   </div>
+
 
   <!-- BACKGROUND FLOATING MANDALA PARTICLES -->
   <div class="mandala-layer" aria-hidden="true">
