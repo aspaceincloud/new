@@ -7,11 +7,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- AOS (free scroll animations) -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -25,7 +23,6 @@
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#events">Events</a>
-        <a href="#gallery">Gallery</a>
         <a href="#venue">Venue</a>
         <a href="#rsvp">RSVP</a>
       </nav>
@@ -33,11 +30,9 @@
       <button class="nav-btn" id="menuBtn" aria-label="Open Menu">☰</button>
     </div>
 
-    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="#home" class="m-link">Home</a>
       <a href="#events" class="m-link">Events</a>
-      <a href="#gallery" class="m-link">Gallery</a>
       <a href="#venue" class="m-link">Venue</a>
       <a href="#rsvp" class="m-link">RSVP</a>
     </div>
@@ -45,41 +40,33 @@
 
   <!-- HERO -->
   <section id="home" class="hero">
-    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-      <p class="hero-eyebrow">Wedding Invitation</p>
+    <div class="hero-inner" data-aos="fade-up">
+      <p class="eyebrow">Wedding Invitation</p>
 
-      <h1 class="hero-title">
-        Abhishek Bhola <span class="gold amp">&</span> Geetika Punj
+      <h1 class="title">
+        Abhishek Bhola <span class="gold">&</span> Geetika Punj
       </h1>
 
-      <p class="hero-subtitle">
-        Save the Date • 19 April 2026 • 07:00 PM • Bikaner, Rajasthan
+      <p class="sub">
+        <b>Wedding:</b> 19 April 2026 • 07:00 PM<br/>
+        <b>Location:</b> Bikaner, Rajasthan
       </p>
 
       <div class="hero-actions">
         <a class="btn primary" href="#rsvp">RSVP</a>
-        <a class="btn ghost" href="#events">View Events</a>
+        <a class="btn ghost" href="#events">Events</a>
+        <a class="btn ghost" href="#venue">Venue</a>
       </div>
 
       <div class="countdown" data-aos="fade-up" data-aos-delay="150">
-        <div class="cd-box"><span id="d">--</span><small>Days</small></div>
-        <div class="cd-box"><span id="h">--</span><small>Hours</small></div>
-        <div class="cd-box"><span id="m">--</span><small>Mins</small></div>
-        <div class="cd-box"><span id="s">--</span><small>Secs</small></div>
+        <div class="cd"><span id="d">--</span><small>Days</small></div>
+        <div class="cd"><span id="h">--</span><small>Hours</small></div>
+        <div class="cd"><span id="m">--</span><small>Mins</small></div>
+        <div class="cd"><span id="s">--</span><small>Secs</small></div>
       </div>
 
-      <p class="hero-mini" data-aos="fade-up" data-aos-delay="250">
-        With the blessings of our families, we request the pleasure of your presence.
-      </p>
-    </div>
-  </section>
-
-  <!-- MESSAGE -->
-  <section class="section">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">We invite you with joy & love</h2>
-      <p class="section-desc">
-        Please join us to celebrate our special moments and bless us as we begin a new journey together.
+      <p class="bless" data-aos="fade-up" data-aos-delay="250">
+        With the blessings of our families, we invite you to celebrate our special day 💛
       </p>
     </div>
   </section>
@@ -87,28 +74,28 @@
   <!-- EVENTS -->
   <section id="events" class="section alt">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Wedding Events</h2>
+      <h2 class="section-title" data-aos="fade-up">Events</h2>
 
-      <div class="grid events">
-        <div class="card" data-aos="fade-up">
+      <div class="events-grid">
+        <div class="event-card" data-aos="fade-up">
           <h3>Engagement</h3>
           <p>18 April 2026 • 06:00 PM</p>
           <span class="tag">Ring Ceremony</span>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="80">
+        <div class="event-card" data-aos="fade-up" data-aos-delay="80">
           <h3>Mehndi / Sangeet</h3>
           <p>18 April 2026 • 08:00 PM</p>
           <span class="tag">Music • Dance</span>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="160">
+        <div class="event-card" data-aos="fade-up" data-aos-delay="160">
           <h3>Haldi</h3>
           <p>19 April 2026 • Afternoon</p>
           <span class="tag">Traditional</span>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="240">
+        <div class="event-card" data-aos="fade-up" data-aos-delay="240">
           <h3>Wedding</h3>
           <p>19 April 2026 • 07:00 PM</p>
           <span class="tag">Main Ceremony</span>
@@ -117,84 +104,60 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section id="gallery" class="section">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Gallery</h2>
-
-      <div class="gallery" data-aos="fade-up" data-aos-delay="120">
-        <!-- Replace these with your own photos -->
-        <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?q=80&w=1200&auto=format&fit=crop" alt="photo 1">
-        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop" alt="photo 2">
-        <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59b3b?q=80&w=1200&auto=format&fit=crop" alt="photo 3">
-        <img src="https://images.unsplash.com/photo-1529634897861-22d3c048bba7?q=80&w=1200&auto=format&fit=crop" alt="photo 4">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="photo 5">
-        <img src="https://images.unsplash.com/photo-1520771739272-7f1f1379a58e?q=80&w=1200&auto=format&fit=crop" alt="photo 6">
-      </div>
-
-      <p class="hint" data-aos="fade-up">
-        Tip: Later I can help you add your own couple photos + pre-wedding pictures.
-      </p>
-    </div>
-  </section>
-
   <!-- VENUE -->
-  <section id="venue" class="section alt">
+  <section id="venue" class="section">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Venue</h2>
 
-      <div class="venue-wrap">
+      <div class="venue-grid">
         <div class="venue-card" data-aos="fade-up" data-aos-delay="100">
           <h3>Utsav Hotel</h3>
-          <p>
-            Bikaner, Rajasthan
-          </p>
+          <p>Bikaner, Rajasthan</p>
 
           <div class="venue-actions">
-            <a class="btn primary" target="_blank"
+            <a class="btn primary" target="_blank" rel="noopener"
               href="https://share.google/ZPlBoMBgeCyVxla7v">
               Open Location
             </a>
 
             <a class="btn ghost" href="#rsvp">
-              Confirm Attendance
+              RSVP Now
             </a>
           </div>
         </div>
 
-        <div class="venue-map" data-aos="fade-up" data-aos-delay="180">
+        <div class="map" data-aos="fade-up" data-aos-delay="170">
           <iframe
-            title="map"
+            title="Utsav Hotel map"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Utsav%20Hotel%20Bikaner&output=embed">
-          </iframe>
+            src="https://www.google.com/maps?q=Utsav%20Hotel%20Bikaner&output=embed"></iframe>
         </div>
       </div>
     </div>
   </section>
 
   <!-- RSVP -->
-  <section id="rsvp" class="section">
+  <section id="rsvp" class="section alt">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">RSVP</h2>
-      <p class="section-desc">
-        Please RSVP by WhatsApp 💛
+      <p class="desc">
+        Please RSVP by WhatsApp 💛 <br/>
+        (Name + Guests + Attending Yes/No)
       </p>
 
-      <div class="rsvp">
-        <a class="btn primary big" id="whatsappBtn" target="_blank" href="#">
+      <div class="rsvp-wrap">
+        <a id="whatsappBtn" class="btn primary big" target="_blank" rel="noopener" href="#">
           RSVP on WhatsApp
         </a>
       </div>
 
-      <p class="hint">
-        Message format includes Name + Guests + Attending Yes/No.
+      <p class="footnote">
+        Thank you for your blessings 🙏
       </p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <p>Made with ❤️ • Abhishek & Geetika</p>
   </footer>
