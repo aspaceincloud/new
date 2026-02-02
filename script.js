@@ -233,3 +233,100 @@ a{color:inherit;text-decoration:none}
   box-shadow: var(--shadow);
 }
 .card h3{
+  margin:0 0 8px;
+  font-family:"Playfair Display", serif;
+}
+.card p{
+  margin:0 0 14px;
+  color:rgba(20,20,20,.70);
+}
+.tag{
+  display:inline-block;
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(201,162,76,.14);
+  border:1px solid rgba(201,162,76,.22);
+  color:rgba(184,139,47,.95);
+}
+
+/* Gallery */
+.gallery{
+  margin-top:20px;
+  display:grid;
+  gap:14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gallery img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:22px;
+  border:1px solid var(--line);
+  transition:.25s ease;
+  box-shadow: var(--shadow);
+}
+.gallery img:hover{transform:scale(1.02)}
+
+/* Venue */
+.venue-wrap{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap:16px;
+}
+.venue-card{
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.85);
+  padding:20px;
+  box-shadow: var(--shadow);
+}
+.venue-card h3{
+  margin:0 0 10px;
+  font-family:"Playfair Display", serif;
+}
+.venue-card p{
+  margin:0 0 18px;
+  color:rgba(20,20,20,.70);
+  line-height:1.7;
+}
+.venue-actions{display:flex; gap:10px; flex-wrap:wrap}
+.venue-map iframe{
+  width:100%;
+  height:100%;
+  min-height:280px;
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow: var(--shadow);
+}
+
+/* RSVP */
+.rsvp{
+  margin-top:18px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* Footer */
+.footer{
+  padding:30px 0;
+  text-align:center;
+  color:rgba(20,20,20,.55);
+}
+
+/* Responsive */
+@media (max-width: 860px){
+  .grid.events{grid-template-columns: repeat(2, 1fr)}
+  .gallery{grid-template-columns: repeat(2, 1fr)}
+  .venue-wrap{grid-template-columns: 1fr}
+}
+@media (max-width: 620px){
+  .nav-links{display:none}
+  .nav-btn{display:inline-flex}
+  .gallery{grid-template-columns: 1fr}
+  .cd-box{width:80px}
+}
