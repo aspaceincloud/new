@@ -5,182 +5,205 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhishek Bhola & Geetika Punj | Wedding Invitation</title>
 
+  <meta name="description" content="Wedding invitation of Abhishek Bhola & Geetika Punj — 19 April 2026, Bikaner Rajasthan." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Similar premium typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- PRELOADER -->
-  <<div class="preloader" id="preloader" aria-hidden="true">
-   <div class="pre-card">
-    <div class="pre-ring"></div>
-    <div class="pre-title">Loading Invitation</div>
-    <div class="pre-sub">Please wait…</div>
-    <div class="pre-skip">
-      <button class="btn ghost" onclick="document.getElementById('preloader').style.display='none'">
-        Skip
-      </button>
-     </div>
-   </div>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-wrap">
+      <div class="pre-line"></div>
+      <div class="pre-title">Loading Invitation</div>
+      <div class="pre-sub">Abhishek & Geetika</div>
+    </div>
   </div>
 
-
-  <!-- BACKGROUND FLOATING MANDALA PARTICLES -->
-  <div class="mandala-layer" aria-hidden="true">
-    <span class="mandala m1"></span>
-    <span class="mandala m2"></span>
-    <span class="mandala m3"></span>
-    <span class="mandala m4"></span>
-  </div>
-
-  <!-- MUSIC -->
+  <!-- Music -->
   <audio id="bgMusic" preload="auto" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
-
-  <button class="music-btn" id="musicBtn" aria-label="Toggle Music" title="Music">
+  <button class="fab music" id="musicBtn" aria-label="Toggle music" title="Music">
     ♫
   </button>
 
-  <!-- SCROLL TO TOP -->
-  <button class="top-btn" id="topBtn" aria-label="Scroll to top">↑</button>
+  <!-- Scroll to top -->
+  <button class="fab top" id="topBtn" aria-label="Back to top" title="Top">↑</button>
 
-  <!-- NAV -->
+  <!-- Nav -->
   <header class="nav">
     <div class="nav-inner">
-      <div class="brand">A<span class="gold">&</span>G</div>
+      <a class="logo" href="#home">A<span class="gold">&</span>G</a>
 
-      <nav class="nav-links">
-        <a href="#home">Home</a>
+      <nav class="links">
         <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
         <a href="#venue">Venue</a>
         <a href="#rsvp">RSVP</a>
       </nav>
 
-      <button class="nav-btn" id="menuBtn" aria-label="Open Menu">☰</button>
+      <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#home" class="m-link">Home</a>
-      <a href="#events" class="m-link">Events</a>
-      <a href="#venue" class="m-link">Venue</a>
-      <a href="#rsvp" class="m-link">RSVP</a>
+    <div class="mobile" id="mobileMenu">
+      <a class="m" href="#events">Events</a>
+      <a class="m" href="#gallery">Gallery</a>
+      <a class="m" href="#venue">Venue</a>
+      <a class="m" href="#rsvp">RSVP</a>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section id="home" class="hero">
-    <!-- sparkles canvas -->
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <!-- subtle sparkles -->
     <canvas id="sparkles" class="sparkles" aria-hidden="true"></canvas>
 
     <div class="hero-inner">
-      <p class="eyebrow reveal">Wedding Invitation</p>
+      <p class="kicker reveal">Wedding Invitation</p>
 
-      <h1 class="title reveal">
-        Abhishek Bhola <span class="amp gold">&</span> Geetika Punj
+      <h1 class="headline reveal delay1">
+        Abhishek Bhola
+        <span class="amp">&</span>
+        Geetika Punj
       </h1>
 
-      <p class="sub reveal">
+      <p class="subhead reveal delay2">
         With the blessings of our families,<br/>
         we invite you to celebrate our wedding.
       </p>
 
-      <div class="hero-pill reveal">
-        <span>19 April 2026</span>
-        <span class="dot">•</span>
-        <span>07:00 PM</span>
-        <span class="dot">•</span>
-        <span>Bikaner, Rajasthan</span>
+      <div class="chips reveal delay3">
+        <span class="chip">19 April 2026</span>
+        <span class="chip">07:00 PM</span>
+        <span class="chip">Bikaner, Rajasthan</span>
       </div>
 
-      <div class="hero-actions reveal">
-        <a class="btn primary" href="#rsvp">RSVP on WhatsApp</a>
+      <div class="hero-cta reveal delay4">
+        <a class="btn primary" href="#rsvp">RSVP</a>
         <a class="btn ghost" href="#events">View Events</a>
       </div>
 
-      <div class="countdown reveal" aria-label="countdown">
+      <div class="countdown reveal delay4">
         <div class="cd"><span id="d">--</span><small>Days</small></div>
         <div class="cd"><span id="h">--</span><small>Hours</small></div>
         <div class="cd"><span id="m">--</span><small>Mins</small></div>
         <div class="cd"><span id="s">--</span><small>Secs</small></div>
       </div>
 
-      <div class="scrollhint reveal">Scroll ↓</div>
+      <p class="scroll reveal">Scroll ↓</p>
     </div>
   </section>
 
-  <!-- MESSAGE -->
+  <!-- Intro -->
   <section class="section">
-    <div class="container">
-      <h2 class="section-title reveal">Join us with your blessings</h2>
-      <p class="section-desc reveal">
-        Weddings are not just ceremonies — they are memories made with people we love.
-        Your presence will make our celebration truly special.
+    <div class="wrap">
+      <h2 class="title reveal">A celebration of love</h2>
+      <p class="text reveal delay1">
+        Weddings are not just ceremonies — they are stories, family, traditions and memories.
+        Your presence and blessings mean everything to us.
       </p>
     </div>
   </section>
 
-  <!-- EVENTS -->
-  <section id="events" class="section alt">
-    <div class="container">
-      <h2 class="section-title reveal">Events</h2>
+  <!-- Events -->
+  <section id="events" class="section soft">
+    <div class="wrap">
+      <h2 class="title reveal">Events</h2>
 
-      <div class="grid events">
-        <div class="card reveal delay1">
-          <h3>Engagement</h3>
-          <p>18 April 2026 • 06:00 PM</p>
-          <span class="tag">Ring Ceremony</span>
-        </div>
+      <div class="cards">
+        <article class="card reveal delay1">
+          <div class="card-top">
+            <h3>Engagement</h3>
+            <span class="pill">18 Apr • 06:00 PM</span>
+          </div>
+          <p>Join us as we celebrate the beginning of our forever.</p>
+        </article>
 
-        <div class="card reveal delay2">
-          <h3>Mehndi / Sangeet</h3>
-          <p>18 April 2026 • 08:00 PM</p>
-          <span class="tag">Music • Dance</span>
-        </div>
+        <article class="card reveal delay2">
+          <div class="card-top">
+            <h3>Mehndi / Sangeet</h3>
+            <span class="pill">18 Apr • 08:00 PM</span>
+          </div>
+          <p>Music, dance and lots of celebrations.</p>
+        </article>
 
-        <div class="card reveal delay3">
-          <h3>Haldi</h3>
-          <p>19 April 2026 • Afternoon</p>
-          <span class="tag">Traditional</span>
-        </div>
+        <article class="card reveal delay3">
+          <div class="card-top">
+            <h3>Haldi</h3>
+            <span class="pill">19 Apr • Afternoon</span>
+          </div>
+          <p>Traditional rituals filled with fun and blessings.</p>
+        </article>
 
-        <div class="card reveal delay4">
-          <h3>Wedding</h3>
-          <p>19 April 2026 • 07:00 PM</p>
-          <span class="tag">Main Ceremony</span>
-        </div>
+        <article class="card reveal delay4">
+          <div class="card-top">
+            <h3>Wedding</h3>
+            <span class="pill">19 Apr • 07:00 PM</span>
+          </div>
+          <p>Be a part of our new beginning and bless us.</p>
+        </article>
       </div>
 
-      <p class="note reveal">
-        Dress in your festive best ✨ and come celebrate with us!
-      </p>
+      <div class="note reveal">
+        Dress in your festive best ✨
+      </div>
     </div>
   </section>
 
-  <!-- VENUE -->
-  <section id="venue" class="section">
-    <div class="container">
-      <h2 class="section-title reveal">Venue</h2>
+  <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="wrap">
+      <h2 class="title reveal">Gallery</h2>
+      <p class="text reveal delay1">A few moments we love.</p>
 
-      <div class="venue-grid">
+      <div class="gallery">
+        <!-- Replace these later with your own -->
+        <img class="g reveal delay1" src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="photo 1" />
+        <img class="g reveal delay2" src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?q=80&w=1200&auto=format&fit=crop" alt="photo 2" />
+        <img class="g reveal delay3" src="https://images.unsplash.com/photo-1523438097201-512ae7d59b3b?q=80&w=1200&auto=format&fit=crop" alt="photo 3" />
+        <img class="g reveal delay4" src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1200&auto=format&fit=crop" alt="photo 4" />
+        <img class="g reveal delay1" src="https://images.unsplash.com/photo-1529634897861-22d3c048bba7?q=80&w=1200&auto=format&fit=crop" alt="photo 5" />
+        <img class="g reveal delay2" src="https://images.unsplash.com/photo-1520771739272-7f1f1379a58e?q=80&w=1200&auto=format&fit=crop" alt="photo 6" />
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+        <img id="lbImg" alt="preview"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Venue -->
+  <section id="venue" class="section soft">
+    <div class="wrap">
+      <h2 class="title reveal">Venue</h2>
+
+      <div class="venue">
         <div class="venue-card reveal delay1">
           <h3>Utsav Hotel</h3>
           <p>Bikaner, Rajasthan</p>
 
           <div class="venue-actions">
             <a class="btn primary" target="_blank" rel="noopener"
-              href="https://share.google/ZPlBoMBgeCyVxla7v">
+               href="https://share.google/ZPlBoMBgeCyVxla7v">
               Open Location
             </a>
             <a class="btn ghost" href="#rsvp">RSVP</a>
           </div>
         </div>
 
-        <div class="venue-map reveal delay2">
+        <div class="map reveal delay2">
           <iframe
             title="Utsav Hotel map"
             loading="lazy"
@@ -192,18 +215,22 @@
   </section>
 
   <!-- RSVP -->
-  <section id="rsvp" class="section alt">
-    <div class="container">
-      <h2 class="section-title reveal">RSVP</h2>
-
-      <p class="section-desc reveal">
-        Please confirm your presence on WhatsApp 💛 <br/>
+  <section id="rsvp" class="section">
+    <div class="wrap">
+      <h2 class="title reveal">RSVP</h2>
+      <p class="text reveal delay1">
+        Please confirm your presence 💛<br/>
         <span class="small">(Name + Guests + Attending Yes/No)</span>
       </p>
 
-      <div class="rsvp-wrap reveal">
-        <a id="whatsappBtn" class="btn primary big" target="_blank" rel="noopener" href="#">
+      <div class="rsvp reveal delay2">
+        <a class="btn primary big" id="whatsappBtn" target="_blank" rel="noopener" href="#">
           RSVP on WhatsApp
+        </a>
+
+        <a class="btn ghost big" target="_blank" rel="noopener"
+           href="https://forms.gle/your-google-form-link">
+          RSVP via Google Form
         </a>
       </div>
 
