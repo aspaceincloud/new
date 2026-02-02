@@ -7,38 +7,36 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
   <!-- PRELOADER -->
-  <div class="preloader" id="preloader">
-    <div class="pre-inner">
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-card">
       <div class="pre-ring"></div>
-      <p class="pre-title">Loading Invitation</p>
-      <p class="pre-sub">Please wait…</p>
+      <div class="pre-title">Loading Invitation</div>
+      <div class="pre-sub">Please wait…</div>
     </div>
   </div>
 
-  <!-- BACKGROUND DECOR -->
+  <!-- BACKGROUND FLOATING MANDALA PARTICLES -->
   <div class="mandala-layer" aria-hidden="true">
     <span class="mandala m1"></span>
     <span class="mandala m2"></span>
     <span class="mandala m3"></span>
+    <span class="mandala m4"></span>
   </div>
 
   <!-- MUSIC -->
   <audio id="bgMusic" preload="auto" loop>
-    <!-- Replace this file with your own mp3 later -->
     <source src="music.mp3" type="audio/mpeg">
   </audio>
 
-  <button class="music-btn" id="musicBtn" aria-label="Toggle Music">
+  <button class="music-btn" id="musicBtn" aria-label="Toggle Music" title="Music">
     ♫
   </button>
 
@@ -53,7 +51,6 @@
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#events">Events</a>
-        <a href="#family">Family</a>
         <a href="#venue">Venue</a>
         <a href="#rsvp">RSVP</a>
       </nav>
@@ -62,41 +59,31 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a class="m-link" href="#home">Home</a>
-      <a class="m-link" href="#events">Events</a>
-      <a class="m-link" href="#family">Family</a>
-      <a class="m-link" href="#venue">Venue</a>
-      <a class="m-link" href="#rsvp">RSVP</a>
+      <a href="#home" class="m-link">Home</a>
+      <a href="#events" class="m-link">Events</a>
+      <a href="#venue" class="m-link">Venue</a>
+      <a href="#rsvp" class="m-link">RSVP</a>
     </div>
   </header>
 
   <!-- HERO -->
   <section id="home" class="hero">
-    <div class="hero-overlay"></div>
+    <!-- sparkles canvas -->
+    <canvas id="sparkles" class="sparkles" aria-hidden="true"></canvas>
 
-    <div class="hero-inner" data-aos="fade-up" data-aos-duration="1000">
+    <div class="hero-inner">
+      <p class="eyebrow reveal">Wedding Invitation</p>
 
-      <div class="frame" aria-hidden="true"></div>
-
-      <div class="ganesh" data-aos="zoom-in" data-aos-delay="120">
-        <img src="ganesh.svg" alt="Lord Ganesha">
-      </div>
-
-      <p class="invocation" data-aos="fade-up" data-aos-delay="180">
-        ॥ श्री गणेशाय नमः ॥
-      </p>
-
-      <h1 class="names" data-aos="fade-up" data-aos-delay="240">
-        Abhishek Bhola <span class="amp">&</span> Geetika Punj
+      <h1 class="title reveal">
+        Abhishek Bhola <span class="amp gold">&</span> Geetika Punj
       </h1>
 
-      <p class="hero-text" data-aos="fade-up" data-aos-delay="300">
+      <p class="sub reveal">
         With the blessings of our families,<br/>
-        we request the honour of your gracious presence<br/>
-        at our wedding celebration.
+        we invite you to celebrate our wedding.
       </p>
 
-      <div class="hero-pill" data-aos="fade-up" data-aos-delay="360">
+      <div class="hero-pill reveal">
         <span>19 April 2026</span>
         <span class="dot">•</span>
         <span>07:00 PM</span>
@@ -104,28 +91,29 @@
         <span>Bikaner, Rajasthan</span>
       </div>
 
-      <div class="hero-actions" data-aos="fade-up" data-aos-delay="420">
+      <div class="hero-actions reveal">
         <a class="btn primary" href="#rsvp">RSVP on WhatsApp</a>
         <a class="btn ghost" href="#events">View Events</a>
       </div>
 
-      <div class="countdown" data-aos="fade-up" data-aos-delay="480">
+      <div class="countdown reveal" aria-label="countdown">
         <div class="cd"><span id="d">--</span><small>Days</small></div>
         <div class="cd"><span id="h">--</span><small>Hours</small></div>
         <div class="cd"><span id="m">--</span><small>Mins</small></div>
         <div class="cd"><span id="s">--</span><small>Secs</small></div>
       </div>
 
+      <div class="scrollhint reveal">Scroll ↓</div>
     </div>
   </section>
 
   <!-- MESSAGE -->
   <section class="section">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">An Indian Wedding Celebration</h2>
-      <p class="section-desc">
-        Weddings are not just ceremonies — they are traditions, emotions, family,
-        and blessings. Your presence will make our celebration even more special.
+    <div class="container">
+      <h2 class="section-title reveal">Join us with your blessings</h2>
+      <p class="section-desc reveal">
+        Weddings are not just ceremonies — they are memories made with people we love.
+        Your presence will make our celebration truly special.
       </p>
     </div>
   </section>
@@ -133,81 +121,47 @@
   <!-- EVENTS -->
   <section id="events" class="section alt">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Wedding Functions</h2>
+      <h2 class="section-title reveal">Events</h2>
 
-      <div class="timeline" data-aos="fade-up" data-aos-delay="120">
-        <div class="t-item">
-          <div class="t-dot"></div>
-          <div class="t-card">
-            <h3>Engagement</h3>
-            <p>18 April 2026 • 06:00 PM</p>
-            <span class="tag">Ring Ceremony</span>
-          </div>
+      <div class="grid events">
+        <div class="card reveal delay1">
+          <h3>Engagement</h3>
+          <p>18 April 2026 • 06:00 PM</p>
+          <span class="tag">Ring Ceremony</span>
         </div>
 
-        <div class="t-item">
-          <div class="t-dot"></div>
-          <div class="t-card">
-            <h3>Mehndi / Sangeet</h3>
-            <p>18 April 2026 • 08:00 PM</p>
-            <span class="tag">Music • Dance</span>
-          </div>
+        <div class="card reveal delay2">
+          <h3>Mehndi / Sangeet</h3>
+          <p>18 April 2026 • 08:00 PM</p>
+          <span class="tag">Music • Dance</span>
         </div>
 
-        <div class="t-item">
-          <div class="t-dot"></div>
-          <div class="t-card">
-            <h3>Haldi</h3>
-            <p>19 April 2026 • Afternoon</p>
-            <span class="tag">Ritual</span>
-          </div>
+        <div class="card reveal delay3">
+          <h3>Haldi</h3>
+          <p>19 April 2026 • Afternoon</p>
+          <span class="tag">Traditional</span>
         </div>
 
-        <div class="t-item">
-          <div class="t-dot"></div>
-          <div class="t-card">
-            <h3>Wedding</h3>
-            <p>19 April 2026 • 07:00 PM</p>
-            <span class="tag">Main Ceremony</span>
-          </div>
+        <div class="card reveal delay4">
+          <h3>Wedding</h3>
+          <p>19 April 2026 • 07:00 PM</p>
+          <span class="tag">Main Ceremony</span>
         </div>
       </div>
 
-      <p class="note" data-aos="fade-up">
+      <p class="note reveal">
         Dress in your festive best ✨ and come celebrate with us!
       </p>
     </div>
   </section>
 
-  <!-- FAMILY SECTION -->
-  <section id="family" class="section">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">Invitation from Family</h2>
-
-      <div class="family-card" data-aos="fade-up" data-aos-delay="120">
-        <p class="family-text">
-          With immense joy and happiness, we invite you to bless
-          <b>Abhishek Bhola</b> and <b>Geetika Punj</b> on their wedding day.
-          Your presence will be our pride and your blessings our greatest gift.
-        </p>
-
-        <div class="divider"></div>
-
-        <p class="family-text">
-          Kindly join us with your family to celebrate our happiness,
-          and make this occasion memorable with your love and blessings 🙏
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- VENUE -->
-  <section id="venue" class="section alt">
+  <section id="venue" class="section">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Venue</h2>
+      <h2 class="section-title reveal">Venue</h2>
 
       <div class="venue-grid">
-        <div class="venue-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="venue-card reveal delay1">
           <h3>Utsav Hotel</h3>
           <p>Bikaner, Rajasthan</p>
 
@@ -216,13 +170,11 @@
               href="https://share.google/ZPlBoMBgeCyVxla7v">
               Open Location
             </a>
-            <a class="btn ghost" href="#rsvp">
-              RSVP Now
-            </a>
+            <a class="btn ghost" href="#rsvp">RSVP</a>
           </div>
         </div>
 
-        <div class="map" data-aos="fade-up" data-aos-delay="180">
+        <div class="venue-map reveal delay2">
           <iframe
             title="Utsav Hotel map"
             loading="lazy"
@@ -234,22 +186,23 @@
   </section>
 
   <!-- RSVP -->
-  <section id="rsvp" class="section">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">RSVP</h2>
-      <p class="section-desc">
-        Please confirm your presence on WhatsApp 💛<br/>
-        (Name + Guests + Attending Yes/No)
+  <section id="rsvp" class="section alt">
+    <div class="container">
+      <h2 class="section-title reveal">RSVP</h2>
+
+      <p class="section-desc reveal">
+        Please confirm your presence on WhatsApp 💛 <br/>
+        <span class="small">(Name + Guests + Attending Yes/No)</span>
       </p>
 
-      <div class="rsvp-wrap">
+      <div class="rsvp-wrap reveal">
         <a id="whatsappBtn" class="btn primary big" target="_blank" rel="noopener" href="#">
           RSVP on WhatsApp
         </a>
       </div>
 
-      <p class="footerline">
-        We eagerly look forward to celebrating together 🙏
+      <p class="footerline reveal">
+        We look forward to celebrating together 🙏
       </p>
     </div>
   </section>
@@ -258,7 +211,6 @@
     <p>Made with ❤️ • Abhishek & Geetika</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
