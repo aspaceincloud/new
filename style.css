@@ -596,3 +596,85 @@ a{color:inherit;text-decoration:none}
   50%{ transform: translate(var(--drift), -55vh) scale(1.02); opacity:1; }
   100%{ transform: translate(calc(var(--drift) * 1.2), -110vh) scale(1.06); opacity:0; }
 }
+/* ==============================
+   MOBILE FIX PACK (CITY INVITE)
+   ============================== */
+
+@media (max-width: 620px){
+
+  /* Hero spacing smaller */
+  .hero-inner{
+    padding: 76px 0 42px !important;
+  }
+
+  .headline{
+    font-size: 42px !important;
+    line-height: 1.08 !important;
+  }
+
+  .subhead{
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+    padding: 0 4px;
+  }
+
+  /* chips should stack cleanly */
+  .chips{
+    gap: 8px !important;
+  }
+  .chip{
+    width: auto;
+    font-size: 13px !important;
+    padding: 10px 12px !important;
+  }
+
+  /* countdown cards smaller */
+  .countdown{
+    gap: 8px !important;
+  }
+  .cd{
+    width: 76px !important;
+    padding: 10px 8px !important;
+  }
+  .cd span{
+    font-size: 22px !important;
+  }
+
+  /* EVENTS SECTION FIX */
+  .cards{
+    grid-template-columns: 1fr !important;   /* important */
+    gap: 12px !important;
+  }
+
+  .card-top{
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .pill{
+    margin-top: 8px !important;
+  }
+
+  /* Gallery */
+  .gallery img{
+    height: 210px !important;
+  }
+
+  /* Venue */
+  .venue-card h3{
+    font-size: 24px !important;
+  }
+
+  /* Timeline spacing */
+  .timeline{
+    padding-left: 20px !important;
+  }
+  .t-card{
+    padding: 14px !important;
+  }
+}
+
+/* Fix any horizontal scroll on mobile */
+body{
+  overflow-x: hidden;
+}
