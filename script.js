@@ -1,4 +1,4 @@
-// ---------- Preloader (safe + skip) ----------
+// ---------- Preloader ----------
 (function(){
   const pre = document.getElementById("preloader");
   const skip = document.getElementById("skipPre");
@@ -143,7 +143,37 @@ if(lightbox && lbImg && lbClose && galleryImgs.length){
   });
 }
 
-// ---------- Hero Sparkles ----------
+// ---------- Lantern generator (image based) ----------
+function spawnLanterns(containerId, count, sizeMin, sizeMax, speedMin, speedMax, opacityMin, opacityMax){
+  const layer = document.getElementById(containerId);
+  if(!layer) return;
+
+  for(let i=0;i<count;i++){
+    const el = document.createElement("div");
+    el.className = "lantern";
+    const size = sizeMin + Math.random()*(sizeMax-sizeMin);
+    const left = Math.random()*100;
+    const delay = Math.random()*8;
+    const dur = speedMin + Math.random()*(speedMax-speedMin);
+    const op = opacityMin + Math.random()*(opacityMax-opacityMin);
+    const drift = (Math.random()*40 - 20);
+
+    el.style.width = `${size}px`;
+    el.style.height = `${size}px`;
+    el.style.left = `${left}%`;
+    el.style.opacity = op;
+    el.style.animationDelay = `${delay}s`;
+    el.style.animationDuration = `${dur}s`;
+    el.style.setProperty("--drift", `${drift}px`);
+
+    layer.appendChild(el);
+  }
+}
+
+spawnLanterns("lanternLayer", 18, 26, 70, 14, 26, 0.18, 0.55);
+spawnLanterns("lanternLayer2", 12, 22, 60, 16, 30, 0.12, 0.40);
+
+// ---------- Sparkles / Fireworks ----------
 const canvas = document.getElementById("sparkles");
 if(canvas){
   const ctx = canvas.getContext("2d");
@@ -163,11 +193,11 @@ if(canvas){
       y: Math.random()*H*0.6,
       r: (Math.random()*1.8 + 0.4)*devicePixelRatio,
       a: Math.random()*0.5 + 0.2,
-      vy: (Math.random()*-0.15 - 0.03)*devicePixelRatio,
-      life: Math.random()*220 + 120
+      vy: (Math.random()*-0.18 - 0.03)*devicePixelRatio,
+      life: Math.random()*240 + 120
     });
   }
-  for(let i=0;i<120;i++) addSpark();
+  for(let i=0;i<150;i++) addSpark();
 
   function tick(){
     ctx.clearRect(0,0,W,H);
@@ -179,13 +209,13 @@ if(canvas){
 
       s.y += s.vy;
       s.life -= 1;
-      s.a *= 0.999;
+      s.a *= 0.9985;
 
       if(s.life<=0 || s.y<-30){
         s.x = Math.random()*W;
-        s.y = H*(0.52 + Math.random()*0.18);
+        s.y = H*(0.55 + Math.random()*0.18);
         s.a = Math.random()*0.5 + 0.2;
-        s.life = Math.random()*220 + 120;
+        s.life = Math.random()*240 + 120;
       }
     }
     requestAnimationFrame(tick);
