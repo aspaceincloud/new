@@ -91,27 +91,48 @@ Blessings:`;
 }
 
 // ---------- Music ----------
+// ---------- Music (more reliable) ----------
 const musicBtn = document.getElementById("musicBtn");
 const bgMusic = document.getElementById("bgMusic");
 let musicOn = false;
 
-if(musicBtn && bgMusic){
+if (musicBtn && bgMusic) {
+
+  // Force user gesture activation
+  const unlockAudio = async () => {
+    try {
+      bgMusic.volume = 0.55;
+      await bgMusic.play();
+      bgMusic.pause();
+      bgMusic.currentTime = 0;
+    } catch (e) {}
+    window.removeEventListener("pointerdown", unlockAudio);
+  };
+
+  // unlock audio on first touch/click anywhere
+  window.addEventListener("pointerdown", unlockAudio);
+
   musicBtn.addEventListener("click", async () => {
-    try{
-      if(!musicOn){
+    try {
+      if (!musicOn) {
+        bgMusic.volume = 0.55;
         await bgMusic.play();
         musicOn = true;
         musicBtn.textContent = "❚❚";
-      }else{
+        musicBtn.title = "Pause music";
+      } else {
         bgMusic.pause();
         musicOn = false;
         musicBtn.textContent = "♫";
+        musicBtn.title = "Play music";
       }
-    }catch(e){
-      alert("Browser blocked autoplay. Tap once anywhere, then try again.");
+    } catch (e) {
+      alert("Music could not play. Check assets/music.mp3 file name/path.");
+      console.error("Audio play failed:", e);
     }
   });
 }
+
 
 // ---------- Gallery Lightbox ----------
 const lightbox = document.getElementById("lightbox");
