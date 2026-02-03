@@ -8,8 +8,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Premium typography similar to City -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
@@ -21,14 +19,14 @@
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="pre-wrap">
       <div class="pre-mark">AG</div>
-      <div class="pre-line"></div>
+      <div class="pre-ring"></div>
       <div class="pre-title">Loading Invitation</div>
       <div class="pre-sub">Abhishek & Geetika</div>
       <button class="pre-skip" id="skipPre">Skip</button>
     </div>
   </div>
 
-  <!-- BACKGROUND SOFT FLOATERS -->
+  <!-- BACKGROUND FLOATERS -->
   <div class="mandala-layer" aria-hidden="true">
     <span class="mandala m1"></span>
     <span class="mandala m2"></span>
@@ -38,11 +36,10 @@
 
   <!-- MUSIC -->
   <audio id="bgMusic" preload="auto" loop>
-    <source src="music.mp3" type="audio/mpeg">
+    <source src="assets/music.mp3" type="audio/mpeg">
   </audio>
-  <button class="fab music" id="musicBtn" aria-label="Toggle music" title="Music">♫</button>
 
-  <!-- TOP -->
+  <button class="fab music" id="musicBtn" aria-label="Toggle music" title="Music">♫</button>
   <button class="fab top" id="topBtn" aria-label="Back to top" title="Top">↑</button>
 
   <!-- NAV -->
@@ -56,6 +53,7 @@
 
       <nav class="links">
         <a href="#events">Events</a>
+        <a href="#scene">Scene</a>
         <a href="#timeline">Timeline</a>
         <a href="#gallery">Gallery</a>
         <a href="#venue">Venue</a>
@@ -67,6 +65,7 @@
 
     <div class="mobile" id="mobileMenu">
       <a class="m" href="#events">Events</a>
+      <a class="m" href="#scene">Scene</a>
       <a class="m" href="#timeline">Timeline</a>
       <a class="m" href="#gallery">Gallery</a>
       <a class="m" href="#venue">Venue</a>
@@ -74,12 +73,15 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero snap">
+  <!-- HERO (City Night) -->
+  <section id="home" class="hero city snap">
     <div class="hero-bg" aria-hidden="true"></div>
 
-    <!-- sparkles canvas -->
+    <!-- Sparkles canvas -->
     <canvas id="sparkles" class="sparkles" aria-hidden="true"></canvas>
+
+    <!-- Lantern Layer (image-based) -->
+    <div class="lantern-layer" id="lanternLayer" aria-hidden="true"></div>
 
     <div class="hero-inner">
       <p class="kicker reveal">Wedding Invitation</p>
@@ -118,32 +120,63 @@
         <span class="arrow">↓</span>
       </div>
     </div>
+
+    <!-- Skyline -->
+    <div class="skyline" aria-hidden="true"></div>
   </section>
 
-  <!-- INTRO -->
-  <section class="section snap">
+  <!-- SCENE: Couple standing -->
+  <section id="scene" class="section scene snap">
     <div class="wrap">
-      <div class="two-col">
-        <div>
-          <h2 class="title reveal">A celebration of love</h2>
+      <div class="scene-grid">
+        <div class="scene-text">
+          <h2 class="title reveal">A City Night to Remember</h2>
           <p class="text reveal delay1">
-            Weddings are not just ceremonies — they are stories, family, traditions and memories.
-            Your presence and blessings mean everything to us.
+            Under the lights of the city and the warmth of our families,
+            we begin a beautiful new journey together.
           </p>
+
+          <div class="scene-mini reveal delay2">
+            <div class="mini-card">
+              <div class="mini-label">Wedding Day</div>
+              <div class="mini-value">19 April 2026</div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-label">Time</div>
+              <div class="mini-value">07:00 PM</div>
+            </div>
+          </div>
+
+          <div class="scene-actions reveal delay3">
+            <a class="btn primary" href="#venue">Venue</a>
+            <a class="btn ghost" href="#gallery">Gallery</a>
+          </div>
         </div>
 
-        <div class="quote reveal delay2">
-          <div class="quote-mark">“</div>
-          <p>
-            We request the honour of your gracious presence and blessings on this special occasion.
-          </p>
-          <div class="quote-sig">— Abhishek & Geetika</div>
+        <div class="scene-art reveal delay2">
+          <!-- Couple silhouette (inline SVG) -->
+          <div class="couple">
+            <svg viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="rgba(201,162,76,0.95)"/>
+                  <stop offset="1" stop-color="rgba(184,139,47,0.85)"/>
+                </linearGradient>
+              </defs>
+              <path fill="rgba(0,0,0,0.65)" d="M120 465c35-80 60-120 108-140 17-7 33-10 52-10 45 0 82 20 120 62 35-42 73-62 118-62 20 0 36 3 52 10 49 20 74 60 110 140H120z"/>
+              <path fill="url(#g)" d="M274 120c0-35 24-62 56-62s56 27 56 62-24 62-56 62-56-27-56-62z"/>
+              <path fill="url(#g)" d="M240 292c30-55 56-84 90-84s60 29 90 84c-45 38-89 38-180 0z"/>
+              <path fill="url(#g)" opacity="0.92" d="M188 448c12-70 30-112 52-136 17-18 36-26 62-26 16 0 34 4 58 12 24-8 42-12 58-12 26 0 45 8 62 26 22 24 40 66 52 136-96 18-200 18-344 0z"/>
+            </svg>
+          </div>
+
+          <div class="scene-glow" aria-hidden="true"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EVENTS (cards) -->
+  <!-- EVENTS -->
   <section id="events" class="section soft snap">
     <div class="wrap">
       <h2 class="title reveal">Events</h2>
@@ -188,8 +221,12 @@
     </div>
   </section>
 
-  <!-- TIMELINE (City vibe) -->
-  <section id="timeline" class="section snap">
+  <!-- TIMELINE (River scene + car animation) -->
+  <section id="timeline" class="section river snap">
+    <div class="river-bg" aria-hidden="true"></div>
+
+    <div class="lantern-layer river-lanterns" id="lanternLayer2" aria-hidden="true"></div>
+
     <div class="wrap">
       <h2 class="title reveal">Wedding Timeline</h2>
       <p class="text reveal delay1">A quick guide to the celebrations.</p>
@@ -232,6 +269,28 @@
             <div class="t-desc">Main ceremony & blessings.</div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Road + moving car -->
+    <div class="road" aria-hidden="true">
+      <div class="car">
+        <!-- Vintage car SVG -->
+        <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="carGold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="rgba(201,162,76,1)"/>
+              <stop offset="1" stop-color="rgba(184,139,47,0.95)"/>
+            </linearGradient>
+          </defs>
+
+          <path fill="url(#carGold)" d="M110 130c8-42 30-70 74-78 44-8 156-8 200 0 44 8 66 36 74 78l10 6v24h-22c-8 22-28 38-52 38-24 0-44-16-52-38H206c-8 22-28 38-52 38-24 0-44-16-52-38H80v-24l30-6z"/>
+          <path fill="rgba(255,255,255,0.75)" d="M176 70c18-10 150-10 168 0 10 6 18 18 22 34H154c4-16 12-28 22-34z"/>
+          <circle class="wheel w1" cx="170" cy="160" r="30" fill="rgba(0,0,0,0.75)"/>
+          <circle class="wheel w2" cx="360" cy="160" r="30" fill="rgba(0,0,0,0.75)"/>
+          <circle class="wheel w1" cx="170" cy="160" r="18" fill="rgba(255,255,255,0.65)"/>
+          <circle class="wheel w2" cx="360" cy="160" r="18" fill="rgba(255,255,255,0.65)"/>
+        </svg>
       </div>
     </div>
   </section>
