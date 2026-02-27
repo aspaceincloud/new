@@ -50,6 +50,7 @@ function updateCountdown() {
 
   countdownEl.textContent = `${days}d ${String(hours).padStart(2, "0")}h ${String(mins).padStart(2, "0")}m ${String(secs).padStart(2, "0")}s`;
 }
+
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
