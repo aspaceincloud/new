@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Abhishek & Geetika | Wedding Invitation</title>
-  <meta name="description" content="Wedding e-card invitation for Abhishek and Geetika">
-
+  <meta name="description" content="City-style cinematic wedding e-card for Abhishek and Geetika">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="preloader" aria-hidden="true">
     <div class="preloader-inner">
       <img src="ganesh.svg" alt="Ganesh symbol" class="ganesh">
-      <p>Loading your invitation…</p>
+      <p>Opening invitation…</p>
       <button id="skipPre" type="button">Skip</button>
     </div>
   </div>
@@ -24,64 +22,81 @@
   <div class="bg-flow"></div>
   <div id="lanternLayer" class="lantern-layer" aria-hidden="true"></div>
 
-  <header class="hero section">
-    <canvas id="sparkles" aria-hidden="true"></canvas>
-    <div class="content">
-      <p class="eyebrow">With the blessings of our families</p>
-      <h1>Abhishek <span>&</span> Geetika</h1>
-      <p class="tagline">invite you to celebrate love, laughter, and forever together.</p>
-      <div id="countdown" class="countdown" aria-live="polite"></div>
-      <p class="meta">19 April 2026 • 7:00 PM • Bikaner, Rajasthan</p>
-      <div class="hero-actions">
-        <a href="#events" class="btn">View Events</a>
-        <a id="whatsappBtn" class="btn btn-outline" target="_blank" rel="noopener">RSVP on WhatsApp</a>
-        <button id="musicBtn" class="music-btn" title="Play music" type="button">♫</button>
-      </div>
-      <audio id="bgMusic" preload="auto" loop>
-        <source src="assets/music.mp3" type="audio/mpeg">
-      </audio>
-    </div>
+  <header class="topbar">
+    <a href="#home" class="brand">Abhishek &amp; Geetika</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#story">Story</a>
+      <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
   </header>
 
-  <section class="section" id="story">
-    <div class="content narrow glass">
-      <h2>Our Story</h2>
-      <p>Under warm lights and joyful hearts, we begin a beautiful new journey together. Your presence will make this day complete.</p>
-    </div>
-  </section>
-
-  <section class="section" id="events">
-    <div class="content narrow">
-      <h2>Wedding Celebrations</h2>
-      <div class="cards">
-        <article class="card"><h3>Engagement</h3><p>18 April • 6:00 PM</p></article>
-        <article class="card"><h3>Mehndi & Sangeet</h3><p>18 April • 8:00 PM</p></article>
-        <article class="card"><h3>Haldi</h3><p>19 April • Afternoon</p></article>
-        <article class="card"><h3>Wedding Ceremony</h3><p>19 April • 7:00 PM</p></article>
+  <main>
+    <section id="home" class="panel hero">
+      <canvas id="sparkles" aria-hidden="true"></canvas>
+      <div class="frame">
+        <p class="kicker">Together with family blessings</p>
+        <p class="save">Save the Date</p>
+        <h1>Abhishek <span>&amp;</span> Geetika</h1>
+        <div id="countdown" class="countdown" aria-live="polite"></div>
+        <p class="event-line">19 April 2026 • 7:00 PM • Bikaner, Rajasthan</p>
+        <div class="hero-actions">
+          <a href="#events" class="btn">View Details</a>
+          <a id="whatsappBtn" class="btn btn-ghost" target="_blank" rel="noopener">RSVP WhatsApp</a>
+          <button id="musicBtn" class="music-btn" title="Play music" aria-label="Toggle background music" type="button">♫</button>
+        </div>
+        <audio id="bgMusic" preload="auto" loop>
+          <source src="assets/music.mp3" type="audio/mpeg">
+        </audio>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="gallery">
-    <div class="content narrow">
-      <h2>Moments</h2>
-      <div class="gallery" aria-label="Photo gallery">
-        <img src="assets/background.jpg" alt="Couple portrait 1">
-        <img src="assets/background.jpg" alt="Couple portrait 2">
-        <img src="assets/background.jpg" alt="Couple portrait 3">
+    <section id="story" class="panel">
+      <div class="frame narrow">
+        <h2>Our Celebration</h2>
+        <p>Under the glow of city lights, we begin a lifelong journey together. Your presence will make our joy complete.</p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="events" class="panel">
+      <div class="frame wide">
+        <h2>Wedding Itinerary</h2>
+        <div class="timeline">
+          <article class="event-card"><p>18 APR</p><h3>Engagement</h3><span>6:00 PM</span></article>
+          <article class="event-card"><p>18 APR</p><h3>Mehndi &amp; Sangeet</h3><span>8:00 PM</span></article>
+          <article class="event-card"><p>19 APR</p><h3>Haldi</h3><span>Afternoon</span></article>
+          <article class="event-card featured"><p>19 APR</p><h3>Wedding</h3><span>7:00 PM</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="panel">
+      <div class="frame wide">
+        <h2>Moments</h2>
+        <div class="gallery" aria-label="Photo gallery">
+          <img src="assets/background.jpg" alt="Wedding photo 1">
+          <img src="assets/background.jpg" alt="Wedding photo 2">
+          <img src="assets/background.jpg" alt="Wedding photo 3">
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp" class="panel">
+      <div class="frame narrow">
+        <h2>Join Us</h2>
+        <p>Kindly confirm your attendance with your name and number of guests.</p>
+        <a id="whatsappBtnSecondary" class="btn" target="_blank" rel="noopener">Send RSVP</a>
+      </div>
+    </section>
+  </main>
 
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button id="lbClose" type="button" aria-label="Close image">×</button>
     <img id="lbImg" alt="Expanded gallery image">
   </div>
 
-  <footer class="footer">
-    With love & gratitude,<br>
-    <strong>Abhishek & Geetika</strong>
-  </footer>
+  <footer class="footer">With love, Abhishek &amp; Geetika</footer>
 
   <script src="script.js"></script>
 </body>

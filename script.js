@@ -2,6 +2,7 @@
 (function () {
   const pre = document.getElementById("preloader");
   const skip = document.getElementById("skipPre");
+
   const hide = () => {
     if (!pre) return;
     pre.style.opacity = "0";
@@ -10,10 +11,23 @@
     }, 350);
   };
 
-  window.addEventListener("load", () => setTimeout(hide, 450));
-  setTimeout(hide, 2600);
+  window.addEventListener("load", () => setTimeout(hide, 500));
+  setTimeout(hide, 2800);
   if (skip) skip.addEventListener("click", hide);
 })();
+
+
+// ---------- Smooth nav scroll ----------
+document.querySelectorAll('.nav a').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const targetId = link.getAttribute('href');
+    if (!targetId || !targetId.startsWith('#')) return;
+    const target = document.querySelector(targetId);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 
 // ---------- Countdown ----------
 const countdownEl = document.getElementById("countdown");
@@ -34,18 +48,26 @@ function updateCountdown() {
   const mins = Math.floor((diff / (1000 * 60)) % 60);
   const secs = Math.floor((diff / 1000) % 60);
 
-  countdownEl.textContent = `${days}d ${String(hours).padStart(2, "0")}h ${String(mins).padStart(2, "0")}m ${String(secs).padStart(2, "0")}s to go`;
+  countdownEl.textContent = `${days}d ${String(hours).padStart(2, "0")}h ${String(mins).padStart(2, "0")}m ${String(secs).padStart(2, "0")}s`;
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // ---------- WhatsApp RSVP ----------
-const whatsappBtn = document.getElementById("whatsappBtn");
-if (whatsappBtn) {
+const whatsappTargets = [
+  document.getElementById("whatsappBtn"),
+  document.getElementById("whatsappBtnSecondary"),
+].filter(Boolean);
+
+if (whatsappTargets.length) {
   const whatsappNumber = "919993688397";
   const message = `Hi! I received your wedding invitation 💛\nName:\nAttending: Yes/No\nNo. of Guests:\nBlessings:`;
-  whatsappBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  whatsappTargets.forEach((btn) => {
+    btn.href = waLink;
+  });
 }
 
 // ---------- Music ----------
@@ -60,8 +82,8 @@ if (musicBtn && bgMusic) {
       await bgMusic.play();
       bgMusic.pause();
       bgMusic.currentTime = 0;
-    } catch (e) {
-      // ignore browser restrictions until explicit click
+    } catch (_e) {
+      // Browser policies may block autoplay until an explicit click.
     }
     window.removeEventListener("pointerdown", unlockAudio);
   };
@@ -146,12 +168,17 @@ function spawnLanterns(containerId, count, sizeMin, sizeMax, speedMin, speedMax,
   }
 }
 
-spawnLanterns("lanternLayer", 24, 24, 72, 15, 28, 0.12, 0.5);
+const isMobile = window.matchMedia("(max-width: 640px)").matches;
+spawnLanterns("lanternLayer", isMobile ? 10 : 22, 24, 64, 16, 28, 0.12, 0.45);
 
 // ---------- Sparkles ----------
 const canvas = document.getElementById("sparkles");
 if (canvas) {
   const ctx = canvas.getContext("2d");
+  if (!ctx) {
+    // Bail out gracefully if canvas context is unavailable.
+    return;
+  }
   let W;
   let H;
 
@@ -164,18 +191,20 @@ if (canvas) {
   resize();
 
   const sparks = [];
+  const sparkCount = isMobile ? 70 : 130;
+
   function addSpark() {
     sparks.push({
       x: Math.random() * W,
-      y: Math.random() * H * 0.7,
-      r: (Math.random() * 1.7 + 0.4) * devicePixelRatio,
+      y: Math.random() * H * 0.72,
+      r: (Math.random() * 1.6 + 0.4) * devicePixelRatio,
       a: Math.random() * 0.5 + 0.2,
-      vy: (Math.random() * -0.2 - 0.04) * devicePixelRatio,
-      life: Math.random() * 260 + 120,
+      vy: (Math.random() * -0.18 - 0.04) * devicePixelRatio,
+      life: Math.random() * 240 + 120,
     });
   }
 
-  for (let i = 0; i < 130; i++) addSpark();
+  for (let i = 0; i < sparkCount; i++) addSpark();
 
   function tick() {
     ctx.clearRect(0, 0, W, H);
@@ -183,16 +212,16 @@ if (canvas) {
     for (const s of sparks) {
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(244, 210, 126, ${s.a})`;
+      ctx.fillStyle = `rgba(246, 221, 172, ${s.a})`;
       ctx.fill();
 
       s.y += s.vy;
       s.life -= 1;
-      s.a *= 0.9985;
+      s.a *= 0.998;
 
       if (s.life <= 0 || s.y < -24) {
         s.x = Math.random() * W;
-        s.y = H * (0.55 + Math.random() * 0.2);
+        s.y = H * (0.58 + Math.random() * 0.2);
         s.a = Math.random() * 0.5 + 0.2;
         s.life = Math.random() * 240 + 120;
       }
