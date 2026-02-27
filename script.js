@@ -16,6 +16,19 @@
   if (skip) skip.addEventListener("click", hide);
 })();
 
+
+// ---------- Smooth nav scroll ----------
+document.querySelectorAll('.nav a').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const targetId = link.getAttribute('href');
+    if (!targetId || !targetId.startsWith('#')) return;
+    const target = document.querySelector(targetId);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
 // ---------- Countdown ----------
 const countdownEl = document.getElementById("countdown");
 const weddingDate = new Date("2026-04-19T19:00:00+05:30");
@@ -161,6 +174,10 @@ spawnLanterns("lanternLayer", isMobile ? 10 : 22, 24, 64, 16, 28, 0.12, 0.45);
 const canvas = document.getElementById("sparkles");
 if (canvas) {
   const ctx = canvas.getContext("2d");
+  if (!ctx) {
+    // Bail out gracefully if canvas context is unavailable.
+    return;
+  }
   let W;
   let H;
 
