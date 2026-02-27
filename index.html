@@ -3,66 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhishek & Geetika</title>
+  <title>Abhishek & Geetika | Wedding Invitation</title>
+  <meta name="description" content="Wedding e-card invitation for Abhishek and Geetika">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="bg-flow"></div>
-
-<section class="hero">
-  <div class="content">
-    <h1>Abhishek <span>&</span> Geetika</h1>
-    <p class="tagline">
-      A celebration of love, family and togetherness.<br>
-      Join us as we begin our forever.
-    </p>
-    <div class="meta">19 April 2026 • 7:00 PM • Bikaner, Rajasthan</div>
-  </div>
-</section>
-
-<section class="section section-one">
-  <div class="content narrow">
-    <h2>A City Night to Remember</h2>
-    <p>
-      Under the city lights and the warmth of our loved ones,
-      we step into a new chapter of our lives.
-    </p>
-  </div>
-</section>
-
-<section class="section section-two">
-  <div class="content narrow">
-    <h2>The Celebrations</h2>
-    <div class="cards">
-      <div class="card">Engagement — 18 April, 6:00 PM</div>
-      <div class="card">Mehndi & Sangeet — 18 April, 8:00 PM</div>
-      <div class="card">Haldi — 19 April, Afternoon</div>
-      <div class="card">Wedding Ceremony — 19 April, 7:00 PM</div>
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <img src="ganesh.svg" alt="Ganesh symbol" class="ganesh">
+      <p>Loading your invitation…</p>
+      <button id="skipPre" type="button">Skip</button>
     </div>
   </div>
-</section>
 
-<section class="section section-three">
-  <div class="content narrow">
-    <h2>Join Us</h2>
-    <p>
-      Your presence means the world to us.<br>
-      Kindly confirm your availability.
-    </p>
-    <div class="rsvp">Name + Guests + Attending (Yes / No)</div>
+  <div class="bg-flow"></div>
+  <div id="lanternLayer" class="lantern-layer" aria-hidden="true"></div>
+
+  <header class="hero section">
+    <canvas id="sparkles" aria-hidden="true"></canvas>
+    <div class="content">
+      <p class="eyebrow">With the blessings of our families</p>
+      <h1>Abhishek <span>&</span> Geetika</h1>
+      <p class="tagline">invite you to celebrate love, laughter, and forever together.</p>
+      <div id="countdown" class="countdown" aria-live="polite"></div>
+      <p class="meta">19 April 2026 • 7:00 PM • Bikaner, Rajasthan</p>
+      <div class="hero-actions">
+        <a href="#events" class="btn">View Events</a>
+        <a id="whatsappBtn" class="btn btn-outline" target="_blank" rel="noopener">RSVP on WhatsApp</a>
+        <button id="musicBtn" class="music-btn" title="Play music" type="button">♫</button>
+      </div>
+      <audio id="bgMusic" preload="auto" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </header>
+
+  <section class="section" id="story">
+    <div class="content narrow glass">
+      <h2>Our Story</h2>
+      <p>Under warm lights and joyful hearts, we begin a beautiful new journey together. Your presence will make this day complete.</p>
+    </div>
+  </section>
+
+  <section class="section" id="events">
+    <div class="content narrow">
+      <h2>Wedding Celebrations</h2>
+      <div class="cards">
+        <article class="card"><h3>Engagement</h3><p>18 April • 6:00 PM</p></article>
+        <article class="card"><h3>Mehndi & Sangeet</h3><p>18 April • 8:00 PM</p></article>
+        <article class="card"><h3>Haldi</h3><p>19 April • Afternoon</p></article>
+        <article class="card"><h3>Wedding Ceremony</h3><p>19 April • 7:00 PM</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="content narrow">
+      <h2>Moments</h2>
+      <div class="gallery" aria-label="Photo gallery">
+        <img src="assets/background.jpg" alt="Couple portrait 1">
+        <img src="assets/background.jpg" alt="Couple portrait 2">
+        <img src="assets/background.jpg" alt="Couple portrait 3">
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lbClose" type="button" aria-label="Close image">×</button>
+    <img id="lbImg" alt="Expanded gallery image">
   </div>
-</section>
 
-<footer class="footer">
-  With love & gratitude<br>
-  <strong>Abhishek & Geetika</strong>
-</footer>
+  <footer class="footer">
+    With love & gratitude,<br>
+    <strong>Abhishek & Geetika</strong>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
