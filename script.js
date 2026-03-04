@@ -4,10 +4,11 @@ window.addEventListener("scroll",()=>{
 const scroll=window.scrollY
 
 document.querySelectorAll(".lantern").forEach((lantern,i)=>{
-lantern.style.transform="translateY("+(scroll*(0.03+i*0.02))+"px)"
+lantern.style.transform="translateY("+(scroll*(0.05+i*0.03))+"px)"
 })
 
 })
+
 
 const target=new Date("April 19, 2026 19:00:00").getTime()
 
