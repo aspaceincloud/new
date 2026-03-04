@@ -1,34 +1,25 @@
 
-const music = document.getElementById("music")
-const btn = document.getElementById("music-btn")
-const icon = document.getElementById("icon")
+window.addEventListener("scroll",()=>{
 
-let playing = false
+const scroll=window.scrollY
 
-btn.onclick = () => {
-
- if(!playing){
-  music.play()
-  icon.innerText = "❚❚"
- }else{
-  music.pause()
-  icon.innerText = "▶"
- }
-
- playing = !playing
-}
-
-// scroll lantern parallax
-
-window.addEventListener("scroll", () => {
-
- const scroll = window.scrollY
-
- document.querySelectorAll(".lantern").forEach((lantern,i)=>{
-
-   lantern.style.transform =
-   "translateY(" + (scroll * (0.03 + i*0.02)) + "px)"
-
- })
+document.querySelectorAll(".lantern").forEach((lantern,i)=>{
+lantern.style.transform="translateY("+(scroll*(0.03+i*0.02))+"px)"
+})
 
 })
+
+const target=new Date("April 19, 2026 19:00:00").getTime()
+
+setInterval(()=>{
+
+const now=new Date().getTime()
+const diff=target-now
+
+const days=Math.floor(diff/(1000*60*60*24))
+const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60))
+const mins=Math.floor((diff%(1000*60*60))/(1000*60))
+
+document.getElementById("timer").innerHTML=days+" Days "+hours+" Hours "+mins+" Minutes"
+
+},1000)
