@@ -15,12 +15,8 @@ z-index:-1;
 }
 
 .hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
 overflow:hidden;
+position:relative;
 }
 
 .names{
@@ -33,11 +29,20 @@ animation:nameFade 2s ease forwards;
 z-index:2;
 }
 
-@keyframes nameFade{
-to{
-opacity:1;
-transform:translateY(0);
+@keyframes floatLantern{
+
+0%{
+transform:translateY(0px) rotate(0deg);
 }
+
+50%{
+transform:translateY(-40px) rotate(2deg);
+}
+
+100%{
+transform:translateY(0px) rotate(0deg);
+}
+
 }
 
 .hero::after{
@@ -62,8 +67,20 @@ height:100%;
 
 .lantern{
 position:absolute;
-filter:drop-shadow(0 0 80px rgba(255,180,80,1));
+filter:drop-shadow(0 0 120px rgba(255,180,80,1));
 animation:floatLantern 6s ease-in-out infinite;
+}
+
+.big{
+z-index:1;
+}
+
+.mid{
+z-index:2;
+}
+
+.small{
+z-index:3;
 }
 
 @keyframes floatLantern{
@@ -73,22 +90,50 @@ animation:floatLantern 6s ease-in-out infinite;
 }
 
 .big{
-width:1200px;
+width:1800px;
 }
 
 .mid{
-width:8400px;
+width:1120px;
 }
 
 .small{
-width:460px;
+width:980px;
+}
+.l1{
+left:-25%;
+top:-10%;
 }
 
-.l1{left:5%;top:25%}
-.l2{left:70%;top:20%}
-.l3{left:40%;top:18%}
-.l4{left:85%;top:35%}
-.l5{left:20%;top:40%}
+.l2{
+right:-30%;
+top:-20%;
+}
+
+.l3{
+left:20%;
+top:10%;
+}
+
+.l4{
+right:10%;
+top:5%;
+}
+
+.l5{
+left:40%;
+top:25%;
+}
+
+.l6{
+right:5%;
+top:35%;
+}
+
+.l7{
+left:70%;
+top:30%;
+}
 
 .section{
 min-height:100vh;
