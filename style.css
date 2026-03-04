@@ -8,15 +8,11 @@ background-image:url("assets/background.jpg");
 background-size:cover;
 background-position:center top;
 background-repeat:no-repeat;
-background-attachment:scroll;
 }
 
 .overlay{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+inset:0;
 background:rgba(0,0,0,0.15);
 pointer-events:none;
 }
@@ -31,29 +27,67 @@ text-align:center;
 padding:40px;
 }
 
-h1{
+.names{
 font-family:'Playfair Display',serif;
-font-size:56px;
-text-shadow:0 4px 20px rgba(0,0,0,0.6);
+font-size:60px;
+text-shadow:0 8px 40px rgba(255,255,255,0.6),
+0 4px 20px rgba(0,0,0,0.6);
 }
 
-h2{
-font-family:'Playfair Display',serif;
-text-shadow:0 4px 12px rgba(0,0,0,0.6);
+.hero{
+position:relative;
+overflow:hidden;
 }
 
-.events-box{
-display:flex;
-flex-direction:column;
-gap:20px;
+.hero-text{
+position:relative;
+z-index:3;
 }
+
+.lantern-layer{
+position:absolute;
+inset:0;
+z-index:1;
+}
+
+.lantern{
+position:absolute;
+opacity:0.9;
+pointer-events:none;
+}
+
+.big{
+width:120px;
+}
+
+.small{
+width:70px;
+}
+
+.l1{ left:10%; top:25%; }
+.l2{ left:70%; top:15%; }
+
+.l3{ left:40%; top:45%; }
+.l4{ left:80%; top:50%; }
 
 .card{
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(8px);
+margin:10px;
 padding:20px;
-border-radius:12px;
 width:250px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+border-radius:12px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 24px;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+border-radius:25px;
+text-decoration:none;
+color:white;
 }
 
 .ganesh-img{
@@ -61,25 +95,40 @@ width:120px;
 margin-bottom:20px;
 }
 
-.car-img{
-width:200px;
-animation:drive 20s linear infinite;
+.car-scene{
+position:relative;
+overflow:hidden;
+}
+
+.car-text{
+position:relative;
+z-index:1;
+font-size:40px;
+}
+
+.car{
+position:absolute;
+bottom:40px;
+width:260px;
+z-index:5;
+animation:drive 18s linear infinite;
 }
 
 @keyframes drive{
-0%{transform:translateX(-120vw);}
-100%{transform:translateX(120vw);}
+0%{left:-300px}
+100%{left:110%}
 }
 
 #music-btn{
 position:fixed;
 bottom:20px;
 right:20px;
-font-size:24px;
-border:none;
-background:white;
+width:60px;
+height:60px;
 border-radius:50%;
-width:50px;
-height:50px;
+border:none;
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.25);
+font-size:22px;
 cursor:pointer;
 }
