@@ -1,10 +1,21 @@
-
 const music=document.getElementById("music")
 const btn=document.getElementById("musicBtn")
 
 btn.addEventListener("click",()=>{
 music.play()
 })
+
+const sections=document.querySelectorAll(".section")
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
+}
+})
+})
+
+sections.forEach(section=>observer.observe(section))
 
 const target=new Date("April 19, 2026 19:00:00").getTime()
 

@@ -1,11 +1,10 @@
-
 body{
 margin:0;
 font-family:Poppins,sans-serif;
 color:white;
 background-image:url("assets/background.jpg");
-background-repeat:no-repeat;
 background-size:100% auto;
+background-repeat:no-repeat;
 background-position:top center;
 }
 
@@ -14,23 +13,37 @@ height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
 position:relative;
 overflow:hidden;
 }
 
 .names{
 font-family:'Cormorant Garamond',serif;
-font-size:84px;
-font-weight:600;
-letter-spacing:2px;
+font-size:90px;
+letter-spacing:3px;
 opacity:0;
-animation:fadeUp 2s ease forwards;
+transform:translateY(40px);
+animation:nameFade 2s ease forwards;
+z-index:2;
 }
 
-@keyframes fadeUp{
-from{opacity:0; transform:translateY(40px)}
-to{opacity:1; transform:translateY(0)}
+@keyframes nameFade{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero::after{
+content:"";
+position:absolute;
+bottom:-40px;
+left:50%;
+transform:translateX(-50%);
+width:600px;
+height:300px;
+background:radial-gradient(circle,rgba(255,200,120,0.5)0%,rgba(255,200,120,0.1)50%,transparent 80%);
+filter:blur(60px);
 }
 
 .lantern-layer{
@@ -39,51 +52,105 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-pointer-events:none;
 }
 
 .lantern{
 position:absolute;
-filter:drop-shadow(0 0 25px rgba(255,200,100,0.9));
-animation:lanternFade 2s ease forwards;
-opacity:0;
+filter:drop-shadow(0 0 40px rgba(255,180,80,0.9));
+animation:floatLantern 6s ease-in-out infinite;
 }
 
-@keyframes lanternFade{to{opacity:1}}
+@keyframes floatLantern{
+0%{transform:translateY(0)}
+50%{transform:translateY(-30px)}
+100%{transform:translateY(0)}
+}
 
-.big{width:380px}
-.mid{width:260px}
+.big{width:420px}
+.mid{width:280px}
 .small{width:180px}
 
-.l1{left:5%; top:15%}
-.l2{left:70%; top:10%}
-.l3{left:40%; top:25%}
-.l4{left:80%; top:40%}
-.l5{left:20%; top:45%}
+.l1{left:5%;top:10%}
+.l2{left:70%;top:5%}
+.l3{left:40%;top:15%}
+.l4{left:85%;top:30%}
+.l5{left:20%;top:35%}
 
-.blessing{text-align:center;padding:80px 20px}
+.section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:80px 20px;
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+.section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
 .ganesh{width:160px;margin-bottom:30px}
-.invite{font-size:40px;margin-top:30px}
-.couple{font-family:'Playfair Display',serif;font-size:48px}
 
-.events{padding:80px 20px;display:flex;flex-direction:column;gap:40px;align-items:center}
-.event{position:relative}
-.frame{width:380px}
-.event-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.invite{font-size:42px;margin-top:20px}
 
-.route{text-align:center;padding:100px 20px}
-.car{width:280px;margin-top:40px}
-.route-btn{padding:16px 34px;background:white;color:black;border-radius:30px;text-decoration:none}
+.couple{
+font-family:'Cormorant Garamond',serif;
+font-size:48px;
+}
 
-.rsvp{text-align:center;padding:100px 20px}
-.rsvp-btn{padding:16px 34px;background:white;color:black;border-radius:30px;text-decoration:none}
+.events{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:60px;
+}
 
-.info{text-align:center;padding:100px 20px}
+.event{
+position:relative;
+width:320px;
+}
 
-.countdown{text-align:center;padding:100px 20px}
-#timer{font-size:32px;margin-top:20px}
+.frame{width:100%}
 
-.closing{text-align:center;padding:140px 20px}
+.event-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:70%;
+}
+
+.route-btn{
+padding:16px 34px;
+border-radius:30px;
+background:white;
+color:black;
+text-decoration:none;
+margin-top:20px;
+}
+
+.car{
+width:260px;
+margin-top:40px;
+}
+
+.rsvp-btn{
+padding:16px 34px;
+border-radius:30px;
+background:white;
+color:black;
+text-decoration:none;
+}
+
+#timer{
+font-size:34px;
+margin-top:20px;
+}
 
 #musicBtn{
 position:fixed;
@@ -95,4 +162,13 @@ border-radius:50%;
 border:none;
 background:white;
 font-size:22px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+.names{font-size:50px}
+.big{width:240px}
+.mid{width:160px}
+.small{width:110px}
+.event{width:260px}
 }
