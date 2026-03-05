@@ -1,134 +1,70 @@
-
-html,body{
-margin:0;
-height:9000px;
-font-family:Poppins,sans-serif;
-overflow-x:hidden;
-}
-
 body{
+margin:0;
+font-family:Poppins,sans-serif;
 background:black;
-}
-
-body::before{
-content:"";
-position:absolute;
-top:0;
-left:50%;
-transform:translateX(-50%);
-width:1920px;
-height:9000px;
-background:url("assets/background.jpg") no-repeat top center;
-background-size:1920px 9000px;
-z-index:-1;
-}
-
-.page{
-position:relative;
-width:100%;
-height:9000px;
-}
-
-.hero{
-position:absolute;
-top:0;
-width:100%;
-height:900px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.names{
-font-family:'Cormorant Garamond',serif;
-font-size:110px;
 color:white;
 }
 
-.lantern-layer{
-position:absolute;
-width:100%;
-height:100%;
-pointer-events:none;
-}
+/* Responsive canvas preserving 1920x9000 ratio */
 
-.lantern{
-position:absolute;
-filter:drop-shadow(0 0 150px rgba(255,200,120,1));
-}
-
-.big{width:1600px; left:-400px; top:-200px;}
-.mid{width:900px; right:-200px; top:-100px;}
-.small{width:700px; left:40%; top:200px;}
-
-.blessing{
-position:absolute;
-top:1100px;
-width:100%;
-text-align:center;
-}
-
-.ganesh{width:160px;}
-
-.events{
-position:absolute;
-top:2700px;
-width:100%;
-display:grid;
-grid-template-columns:repeat(2,360px);
-justify-content:center;
-gap:80px 120px;
-}
-
-.event{
+.canvas{
 position:relative;
-width:360px;
+width:100%;
+max-width:1920px;
+margin:auto;
+
+background:url("assets/background.jpg") no-repeat top center;
+background-size:100% 100%;
+
+/* aspect ratio 9000 / 1920 = 4.6875 */
+padding-bottom:468.75%;
 }
 
-.frame{width:100%;}
+/* sections positioned by percentage of artwork height */
 
+.hero{position:absolute;top:0%;width:100%;text-align:center;}
+.blessing{position:absolute;top:12.22%;width:100%;text-align:center;}
+.events{position:absolute;top:30%;width:100%;display:grid;grid-template-columns:repeat(2, min(360px,40vw));justify-content:center;gap:5vw;}
+.route{position:absolute;top:51.11%;width:100%;text-align:center;}
+.rsvp{position:absolute;top:62.22%;width:100%;text-align:center;}
+.countdown{position:absolute;top:82.22%;width:100%;text-align:center;}
+.closing{position:absolute;top:95.56%;width:100%;text-align:center;}
+
+/* typography */
+
+.names{
+font-family:'Cormorant Garamond',serif;
+font-size:min(6vw,110px);
+}
+
+/* lanterns */
+
+.lantern-layer{position:absolute;width:100%;height:100%;pointer-events:none;}
+.lantern{position:absolute;filter:drop-shadow(0 0 120px rgba(255,200,120,1));}
+
+.big{width:min(90vw,1600px);left:-20%;top:-5%;}
+.mid{width:min(55vw,900px);right:-10%;top:0;}
+.small{width:min(40vw,700px);left:35%;top:8%;}
+
+/* frames */
+
+.event{position:relative;width:100%;max-width:360px;margin:auto;}
+.frame{width:100%;}
 .event-text{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-width:60%;
+width:65%;
 text-align:center;
+font-size:min(1.2vw,18px);
 }
 
-.route{
-position:absolute;
-top:4600px;
-width:100%;
-text-align:center;
-}
-
-.car{width:260px;margin-top:30px;}
-
-.rsvp{
-position:absolute;
-top:5600px;
-width:100%;
-text-align:center;
-}
-
-.countdown{
-position:absolute;
-top:7400px;
-width:100%;
-text-align:center;
-}
-
-.closing{
-position:absolute;
-top:8600px;
-width:100%;
-text-align:center;
-}
+/* buttons */
 
 .btn{
 display:inline-block;
-padding:16px 34px;
+padding:12px 28px;
 background:white;
 color:black;
 border-radius:30px;
@@ -136,10 +72,11 @@ text-decoration:none;
 margin-top:20px;
 }
 
-#timer{
-font-size:40px;
-margin-top:20px;
-}
+.car{width:min(30vw,260px);margin-top:30px;}
+
+#timer{font-size:min(4vw,40px);margin-top:20px;}
+
+/* music */
 
 #musicBtn{
 position:fixed;
@@ -150,23 +87,21 @@ height:60px;
 border-radius:50%;
 border:none;
 background:white;
-font-size:24px;
+font-size:22px;
+cursor:pointer;
 }
 
-/* Mobile */
-@media(max-width:768px){
+/* mobile adjustments */
 
-.names{font-size:60px;}
+@media(max-width:768px){
 
 .events{
 grid-template-columns:1fr;
-gap:60px;
+gap:8vw;
 }
 
-.event{width:260px; margin:auto;}
-
-.frame{width:260px;}
-
-.event-text{width:70%;}
+.event-text{
+font-size:3.5vw;
+}
 
 }

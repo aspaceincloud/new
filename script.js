@@ -1,4 +1,3 @@
-
 const music=document.getElementById("music")
 document.getElementById("musicBtn").onclick=()=>music.play()
 
